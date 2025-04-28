@@ -1,0 +1,22 @@
+<div class="card info-card">
+  <div class="card-body">
+    <h5 class="card-title">{{ title }} <span>| {{ period }}</span></h5>
+
+    <div class="d-flex align-items-center">
+      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+        <i *ngIf="icon === 'cart'" class="bi bi-cart"></i>
+        <i *ngIf="icon === 'currency-dollar'" class="bi bi-currency-dollar"></i>
+        <i *ngIf="icon === 'people'" class="bi bi-people"></i>
+      </div>
+      <div class="ps-3">
+        <h6>{{ value }}</h6>
+        <span [class]="isIncrease ? 'text-success small pt-1 fw-bold' : 'text-danger small pt-1 fw-bold'">
+          {{ percentChange }}%
+        </span>
+        <span class="text-muted small pt-2 ps-1">
+          {{ isIncrease ? 'increase' : 'decrease' }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

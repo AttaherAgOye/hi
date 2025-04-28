@@ -1,1 +1,371 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* Custom Variables */
+:root {
+  --primary-color: #4154f1;
+  --secondary-color: #717ff5;
+  --success-color: #2ecc71;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f6f9ff;
+  --dark-color: #012970;
+  --header-height: 60px;
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 70px;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #f6f9ff;
+  color: #444444;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  background-color: #fff;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  height: var(--header-height);
+  padding: 0 20px;
+  transition: all 0.5s;
+  z-index: 1000;
+}
+
+.header .logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.header .search-bar {
+  min-width: 360px;
+  padding: 0 20px;
+}
+
+.header .search-form {
+  width: 100%;
+}
+
+.header .search-form input {
+  border: 0;
+  font-size: 14px;
+  color: var(--dark-color);
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  padding: 7px 38px 7px 8px;
+  border-radius: 3px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.header .search-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 15px;
+  margin-right: 3px;
+  transition: 0.3s;
+  color: var(--dark-color);
+}
+
+.header-nav .badge-number {
+  position: absolute;
+  inset: 4px 6px auto auto;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.header-nav .nav-profile img {
+  max-height: 36px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  z-index: 999;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #aab7cf transparent;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: #fff;
+}
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-item {
+  margin-bottom: 5px;
+}
+
+.sidebar-nav .nav-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #899bbd;
+  font-weight: 600;
+  margin: 10px 0 5px 15px;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark-color);
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 16px;
+  margin-right: 10px;
+  color: var(--dark-color);
+}
+
+.sidebar-nav .nav-link.collapsed {
+  color: var(--dark-color);
+  background: #fff;
+}
+
+.sidebar-nav .nav-link.collapsed i {
+  color: #899bbd;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: var(--primary-color);
+  background: #f6f9ff;
+}
+
+.sidebar-nav .nav-link:hover i {
+  color: var(--primary-color);
+}
+
+.sidebar-nav .nav-link .bi-chevron-down {
+  margin-right: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-link.active {
+  color: var(--primary-color);
+  background: #f6f9ff;
+}
+
+.sidebar-nav .nav-link.active i {
+  color: var(--primary-color);
+}
+
+/* Main Styles */
+.main {
+  margin-left: var(--sidebar-width);
+  padding: 20px 30px;
+  transition: all 0.3s;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.pagetitle {
+  margin-bottom: 10px;
+}
+
+.pagetitle h1 {
+  font-size: 24px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* Cards */
+.card {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.card-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark-color);
+  font-family: "Nunito", sans-serif;
+}
+
+.card-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Card Stats */
+.info-card {
+  padding-bottom: 5px;
+}
+
+.info-card h6 {
+  font-size: 22px;
+  color: var(--dark-color);
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.info-card .card-title {
+  font-size: 14px;
+}
+
+.info-card .card-body {
+  padding: 8px 10px;
+}
+
+.info-card .card-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+/* Re-add global card-icon styles */
+.card-icon {
+  font-size: 32px;
+  line-height: 0;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* Overrides for info-card padding and icon size */
+.info-card .card-body {
+  padding: 10px;
+}
+
+.info-card .card-icon {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+}
+
+/* Recent Activity */
+.activity {
+  font-size: 14px;
+}
+
+.activity .activity-item:first-child .activity-badge {
+  margin-top: 5px;
+}
+
+.activity .activity-item {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.activity .activity-item .activity-badge {
+  color: #fff;
+  font-size: 11px;
+  position: absolute;
+  left: -11px;
+  padding-top: 3px;
+  top: 0;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.activity .activity-item .activity-label {
+  color: #888;
+  min-width: 60px;
+  font-weight: 600;
+}
+
+.activity .activity-item .activity-content {
+  position: relative;
+  padding-left: 10px;
+  padding-bottom: 8px;
+}
+
+.activity .activity-item .activity-content::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: #eceefe;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Other Components */
+.filter {
+  position: absolute;
+  right: 0px;
+  top: 15px;
+}
+
+.filter .icon {
+  color: #aab7cf;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.filter .icon:hover, .filter .icon:focus {
+  color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (max-width: 1199px) {
+  .sidebar {
+    left: -var(--sidebar-width);
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}
+
+/* Layout Container */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+}

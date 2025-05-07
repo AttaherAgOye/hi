@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { CommonModule } from '@angular/common';
 
@@ -9,12 +9,12 @@ Chart.register(...registerables);
   standalone: true,
   imports: [CommonModule],
   templateUrl: './radar-chart.component.html',
-  styleUrl: './radar-chart.component.scss'
+  styleUrls: ['./radar-chart.component.scss']
 })
-export class RadarChartComponent implements OnInit {
+export class RadarChartComponent implements AfterViewInit {
   chart: any;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.createChart();
   }
 

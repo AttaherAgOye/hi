@@ -3,7 +3,8 @@
     <h5 class="card-title">{{ title }} <span>| {{ period }}</span></h5>
 
     <div class="d-flex align-items-center">
-      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"
+        [ngStyle]="{'background-color': bgColor, 'color': iconColor}">
         <i *ngIf="icon === 'cart'" class="bi bi-cart"></i>
         <i *ngIf="icon === 'currency-dollar'" class="bi bi-currency-dollar"></i>
         <i *ngIf="icon === 'people'" class="bi bi-people"></i>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { CommonModule } from '@angular/common';
 
@@ -9,12 +9,12 @@ Chart.register(...registerables);
   standalone: true,
   imports: [CommonModule],
   templateUrl: './donut-chart.component.html',
-  styleUrl: './donut-chart.component.scss'
+  styleUrls: ['./donut-chart.component.scss']
 })
-export class DonutChartComponent implements OnInit {
+export class DonutChartComponent implements AfterViewInit {
   chart: any;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.createChart();
   }
 

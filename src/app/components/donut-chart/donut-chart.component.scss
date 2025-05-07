@@ -1,0 +1,13 @@
+/* Ensure the donut chart component fills its container */
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Make canvas fill the host element */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

@@ -1,0 +1,14 @@
+/* Allow legend items to wrap and prevent overflow */
+:host .d-flex.justify-content-between {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Prevent legend item labels from wrapping internally */
+:host .d-flex.justify-content-between > .d-flex.align-items-center {
+  flex: 0 0 auto;
+}
+:host .d-flex.justify-content-between > .d-flex.align-items-center span:last-child {
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
